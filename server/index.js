@@ -18,6 +18,14 @@ const {
   SESSION_SECRET
 } = process.env;
 
+app.use(
+  session({
+    secret: SESSION_SECRET,
+    resave: false,
+    saveUninitialized: true
+  })
+);
+
 
 
 app.listen(SERVER_PORT, () => {
