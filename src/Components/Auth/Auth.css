@@ -1,9 +1,10 @@
+.auth-page {
+  height: 100%;
+  width: 100%;
+}
+
 .auth-container {
   background-color: white;
   height: 100%;
   width: 60%;
-}
-
-.auth-page {
-  background-color: #AFD4C0;
 }

@@ -12,7 +12,8 @@ export default class Auth extends Component {
           <input />
           <h4>Password</h4>
           <input type="password" />
-
+          <br />
+          
           <button>Login</button>
           <button>Register</button>
         </div>
