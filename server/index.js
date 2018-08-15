@@ -12,6 +12,7 @@ const app = express();
 app.use( bodyParser.json() );
 app.use( cors() );
 
+
 // AUTHORIZATION ENDPOINTS
 
 app.post('/api/auth/login')
@@ -24,6 +25,7 @@ app.post('/api/auth/logout')
 app.get('/api/properties')
 app.post('/api/properties')
 app.delete('/api/properties/:id')
+
 
 const {
   SERVER_PORT,
