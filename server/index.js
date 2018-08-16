@@ -15,16 +15,16 @@ app.use( cors() );
 
 // AUTHORIZATION ENDPOINTS
 
-app.post('/api/auth/login')
-app.post('/api/auth/register')
-app.post('/api/auth/logout')
+app.post('/api/auth/login');
+app.post('/api/auth/register');
+app.post('/api/auth/logout');
 
 
 // PROPERTIES ENDPOINTS
 
-app.get('/api/properties')
-app.post('/api/properties')
-app.delete('/api/properties/:id')
+app.get('/api/properties');
+app.post('/api/properties');
+app.delete('/api/properties/:id');
 
 
 const {
