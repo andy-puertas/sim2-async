@@ -15,7 +15,12 @@ app.use( cors() );
 
 // AUTHORIZATION ENDPOINTS
 
-app.post('/api/auth/login');
+app.post('/api/auth/login', (req, res) => {
+  console.log(req.session);
+  res.sendStatus(200)
+});
+
+
 app.post('/api/auth/register');
 app.post('/api/auth/logout');
 

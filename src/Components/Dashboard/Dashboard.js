@@ -8,6 +8,8 @@ export default class Dashboard extends Component {
       <div className="dash-page">
         <div className="dash-container">
           <button>Add New Property</button>
+          <br/>
+          
           <p>List properties with "desired rent" greater than: $</p>
           <input className="filter-input" 
                  placeholder="0"/>

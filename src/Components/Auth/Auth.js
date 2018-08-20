@@ -3,6 +3,14 @@ import React, { Component } from 'react';
 import './Auth.css';
 
 export default class Auth extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      username: '',
+      password: ''
+    }
+  }
+
   render() {
     return (
       <div className="auth-page">
