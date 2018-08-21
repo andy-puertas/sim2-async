@@ -1,6 +1,14 @@
 import React, { Component } from 'react';
 
 export default class Wizard1 extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      name: '',
+      description: ''
+    }
+  }
+  
   render() {
     return (
       <div className="wiz1-page">
