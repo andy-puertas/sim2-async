@@ -7,6 +7,11 @@ export default class Wizard5 extends Component {
       
     }
   }
+
+  handleAdd() {
+    
+  }
+
   render() {
     return (
       <div>

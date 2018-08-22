@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 //import { Link } from 'react-router-dom';
+//import axios from 'axios';
 import './Auth.css';
 
 export default class Auth extends Component {

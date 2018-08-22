@@ -9,6 +9,11 @@ export default class Dashboard extends Component {
       
     }
   }
+
+  componentDidMount(){
+
+  }
+
   render() {
     return (
       <div className="dash-page">
@@ -23,7 +28,7 @@ export default class Dashboard extends Component {
           <button>Reset</button>
           <hr />
 
-        <h3>Home Listings</h3>  
+          <h3>Home Listings</h3>  
       
         </div>
       </div>
