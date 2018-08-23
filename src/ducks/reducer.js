@@ -1,6 +1,17 @@
 const initialState = {
-  id: 0,
-  username: ''
+  user: {},
+  properties: [],
+  loading: false,
+  name: '',
+  desc: '',
+  address: '',
+  city: '',
+  state: '',
+  zip: '',
+  img: '',
+  loan: 0,
+  mortage: 0,
+  rent: 0
 }
 
 const GET_USER = 'GET_USER'
