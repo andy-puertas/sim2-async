@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
+//import Header from '../Header/Header';
 //import { Link } from 'react-router-dom';;
 //import axios from 'axios;
-import './Dashboard.css'
+import './Dashboard.css';
 
 export default class Dashboard extends Component {
   constructor(props){
@@ -19,6 +20,7 @@ export default class Dashboard extends Component {
     return (
       <div className="dash-page">
         <div className="dash-container">
+        
           <button>Add New Property</button>
           <br/>
           

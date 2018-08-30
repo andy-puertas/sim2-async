@@ -1,10 +1,32 @@
 .auth-page {
-  height: 100%;
-  width: 100%;
+  height: 100vh;
+  width: 50%;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
 }
 
-.auth-container {
-  background-color: white;
-  height: 100%;
-  width: 60%;
+.auth-logo {
+  margin: 50px;
+  width: 50px;
+  height: 50px;
+}
+
+.auth-input {
+  width: 70%;
+  height: 20px;
+  margin: 10px;
+}
+
+input, textarea, .largeImg {
+  border: #AFD4C0 solid 2px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+input, h3, textarea {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 600;
 }

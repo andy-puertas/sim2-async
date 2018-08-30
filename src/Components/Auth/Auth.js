@@ -29,21 +29,23 @@ export default class Auth extends Component {
     console.log(this.state);
     return (
       <div className="auth-page">
-        <div className="auth-container">
-
-          <img src={ logo } alt='auth-logo'/>
+          <img src={ logo } alt='auth-logo' className="auth-logo" />
 
           <h4>Username</h4>
-          <input />
+          <input className="auth-input" />
           <h4>Password</h4>
-          <input type="password" />
+          <input type="password" className="auth-input" />
           <br />
-          
-          <button>Login</button>
-          <button>Register</button>
-        </div>
-        
+
+          <div className="auth-buttons-container">
+            <button>Login</button>
+            <button>Register</button>
+          </div>
       </div>
     )
   }
 }
+        
+
+       
+        

@@ -1,5 +1,6 @@
 import React from 'react';
 import logo from '../Assets/header_logo.png';
+import './Header.css';
 
 const Header = () => {
   return (
@@ -8,7 +9,7 @@ const Header = () => {
         <img src={ logo } alt='header-logo'/>
         <h2>Houser</h2>
         <h2>Dashboard</h2>
-        <p>Logout</p>
+        <p className="logout-link">Logout</p>
       </nav>
     </div>
   )

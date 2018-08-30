@@ -1,0 +1,20 @@
+.header {
+  background-color: #519872;
+  color: white;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 800;
+  box-sizing: border-box;
+  height: 50px;
+}
+
+.header-logo + h2 {
+  float: left;
+  margin-top: 15px;
+}
+
+.logout-link {
+  background-color: #519872;
+  border: 0;
+  margin: 2px 5vw;
+  float: right;
+}
