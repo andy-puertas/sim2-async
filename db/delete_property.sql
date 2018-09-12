@@ -1,2 +1,2 @@
-DELETE FROM Properties
+DELETE FROM properties
 WHERE id = $1;
