@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import { logout } from '../../ducks/reducer';
+import  navLogo  from '../Assets/header_logo.png';
 import axios from 'axios';
 import './Header.css';
 
@@ -24,9 +25,9 @@ class Header extends Component {
         <div>
           <section className='navbar'>
             <div className='nav-content'>
-              <img src="../Assets/auth_logo.png" alt="logo"/>
-              <h1>Houser</h1>
-              <h2>Dashboard</h2>
+              <img src={navLogo} alt="logo" className='nav-logo'/>
+              <h1 className='houser-word'>Houser</h1>
+              <h2 className='dashboard-word'>Dashboard</h2>
             </div>
             <div className='log-button'>
               <a><button className='logout' onClick={this.logout}>Logout</button></a>

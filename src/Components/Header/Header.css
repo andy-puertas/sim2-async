@@ -1,21 +1,22 @@
 .navbar {
   width: 100%;
-  height: 70px;
+  height: 60px;
   background: #519872;
 }
 
-h1 {
-  font-size: 30px;
+.houser-word {
+  font-size: 25px;
   font-weight: 700;
   color: white;
   margin-right: 12px;
   margin-left: 12px;
 }
 
-h2 {
-  font-size: 30px;
-  font-weight: 500;
+.dashboard-word {
+  font-size: 25px;
+  font-weight: 100;
   color: white; 
+  margin-left: 3px;
 }
 
 .nav-content {
@@ -26,6 +27,7 @@ h2 {
 }
 
 .logout {
+  font-size: 12px;
   position: relative;
   left: 26%;
   background: none;

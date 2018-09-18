@@ -1,34 +1,81 @@
-import React, { Component } from 'react';;
-//import { connect } from 'react-redux';
+import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
+import { loanAmount, mortgage } from './../../../ducks/reducer';
+import { connect } from 'react-redux';
+import activeStep from '../../Assets/step_active.png';
+import inactiveStep from '../../Assets/step_inactive.png';
+import completeStep from '../../Assets/step_completed.png';
 
-export default class Wizard4 extends Component {
+
+class Wizard4 extends Component {
   constructor(props) {
     super(props);
     this.state = {
       loanAmount: '',
       monthlyMortgage: ''
     }
+    this.addLoan = this.addLoan.bind( this );
+    this.addMortgage = this.addMortgage.bind( this );
   }
+
+  addLoan(e) {
+    this.props.loanAmount(e.target.value)
+  }
+
+  addMortgage(e) {
+    this.props.mortgage(e.target.value)
+  }
+
   render() {
     return (
-      <div className="wiz4-page">
-        <div className="wiz4-container">
+      <section className="wiz-box">
+        <div className="add-cancel">
+          <h1>Add New Listing</h1>
+          <Link to='/dash'><button id='cancel'>Cancel</button></Link>
+        </div>  
+
+        <div className='steps'>
           <p>Step 4</p>
-          <br />
+        </div>  
 
-          <h4>Loan Amount</h4>
-          <input />
-          <br />
+        <div className='dots'>
+          <img src={completeStep} alt='complete'/>
+          <img src={completeStep} alt='complete'/>
+          <img src={completeStep} alt='complete'/>
+          <img src={activeStep} alt='current'/>
+          <img src={inactiveStep} alt='inactive'/>
+        </div>  
 
-          <h4>Monthly Mortgage</h4>
-          <input />
-          <br />
+        <div className='name-desc-box'>
+          <p className='texts' id='prop-name'>Loan Amount</p>
+          <input className='input-boxes' id='input-name' type='text' onChange={this.addLoan}/>
+          <p className='texts' id='prop-desc'>Monthly Mortgage</p>
+          <input className='input-boxes' id='input-mort' type='text' onChange={this.addMortgage}/>
+        </div>   
 
-          <button>Previous Step</button>
-          <button>Next Step</button>
-        </div>
+        <div id='prev-next-box'>
+          <Link to='/wizard/3'>
+            <button className='next-step' id='prev-next-prev'>Previous Step</button>
+          </Link>
+
+          <Link to='/wizard/5'>
+            <button className='next-step' id='prev-next-next'>Next Step</button>
+          </Link>
+        </div>  
         
-      </div>
+        
+      </section>
     )
   }
 }
+
+function mapStateToProps(reduxState) {
+  return {
+    loan_amount: reduxState.loan_amount,
+    monthly_mortgage: reduxState.monthly_mortgage
+  };
+}
+
+export default connect(mapStateToProps, {loanAmount, mortgage}) (Wizard4);
+
+

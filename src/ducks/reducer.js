@@ -6,13 +6,13 @@ const initialState = {
   username: '',
   password: '',
   name: '',
-  desc: '',
+  description: '',
   address: '',
   city: '',
-  st: '',
+  state: '',
   zip: '',
-  img: '',
-  loan: '',
+  image: '',
+  loan_amount: '',
   mortgage: '',
   desired_rent: '',
   recommended_rent: ''
@@ -50,19 +50,19 @@ export default function reducer(state=initialState, action) {
     case GET_NAME:
         return Object.assign( {}, state, {name: payload} )
     case GET_DESCRIPTION:
-        return Object.assign( {}, state, {desc: payload} )
+        return Object.assign( {}, state, {description: payload} )
     case GET_ADDRESS:
         return Object.assign( {}, state, {address: payload} )
     case GET_CITY:
         return Object.assign( {}, state, {city: payload} )
     case GET_STATE:
-        return Object.assign( {}, state, {st: payload} )
+        return Object.assign( {}, state, {state: payload} )
     case GET_ZIP:
         return Object.assign( {}, state, {zip: payload} )
     case GET_IMAGE:
-        return Object.assign( {}, state, {img: payload} )
+        return Object.assign( {}, state, {image: payload} )
     case LOAN_AMOUNT:
-        return Object.assign( {}, state, {loan: payload} )
+        return Object.assign( {}, state, {loan_amount: payload} )
     case MONTHLY_MORTGAGE:
         return Object.assign( {}, state, {mortgage: payload} )
     case DESIRED_RENT:
@@ -114,10 +114,10 @@ export function city(city) {
   };
 }
 
-export function description(desc) {
+export function description(description) {
   return {
     type: GET_DESCRIPTION,
-    payload: desc
+    payload: description
   };
 }
 
@@ -128,10 +128,10 @@ export function address(address) {
   };
 }
 
-export function state(st) {
+export function state(state) {
   return {
     type: GET_STATE,
-    payload: st
+    payload: state
   };
 }
 
@@ -142,10 +142,17 @@ export function zip(zip) {
   };
 }
 
-export function image(img) {
+export function image(image) {
   return {
     type: GET_IMAGE,
-    payload: img
+    payload: image
+  };
+}
+
+export function loanAmount(loan_amount) {
+  return {
+    type: LOAN_AMOUNT,
+    payload: loan_amount
   };
 }
 
