@@ -1,18 +1,48 @@
-import React from 'react';
-import logo from '../Assets/header_logo.png';
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
+import { logout } from '../../ducks/reducer';
+import axios from 'axios';
 import './Header.css';
 
-const Header = () => {
-  return (
-    <div className="header">
-      <nav>
-        <img src={ logo } alt='header-logo'/>
-        <h2>Houser</h2>
-        <h2>Dashboard</h2>
-        <p className="logout-link">Logout</p>
-      </nav>
-    </div>
-  )
+class Header extends Component {
+  constructor(props) {
+    super(props);
+    this.logout = this.logout.bind( this );
+  }
+
+  logout() {
+    axios.get('/api/auth/logout').then( res => {
+      console.log(res.data);
+      this.props.history.push('/');
+    })
+  }
+
+  render() {
+    if (this.props.location.pathname !== '/') {
+      return (
+        <div>
+          <section className='navbar'>
+            <div className='nav-content'>
+              <img src="./header_logo.png" alt="logo"/>
+              <h1>Houser</h1>
+              <h2>Dashboard</h2>
+            </div>
+            <div className='log-button'>
+              <a><button className='logout' onClick={this.logout}>Logout</button></a>
+            </div>
+          </section>
+
+        </div>
+      )
+    } else {
+      return null;
+    }
+  }
 }
 
-export default Header
+function mapStateToProps(state) {
+  return state;
+}
+
+export default withRouter(connect(mapStateToProps, {logout}) (Header));

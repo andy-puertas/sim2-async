@@ -11,6 +11,8 @@ export default class Auth extends Component {
       username: '',
       password: ''
     }
+    this.handleName = this.handleName.bind( this );
+    this.handlePass = this.handlePass.bind( this );
   }
 
   handleName(e) {

@@ -1,27 +1,28 @@
 -- USERS TABLE
 
 -- CREATE TABLE houseusers (
---    ID SERIAL PRIMARY KEY,
---    Username VARCHAR(20),
---    Password VARCHAR(20)
+--    id SERIAL PRIMARY KEY,
+--    username VARCHAR(20),
+--    password VARCHAR(20)
 -- )
 
 
 -- PROPERTIES TABLE
 
 -- CREATE TABLE Properties (
---     ID SERIAL PRIMARY KEY,
---     UserID INTEGER NOT NULL REFERENCES houseusers(ID),
---     Name VARCHAR(250),
---     Description TEXT,
---     Address VARCHAR(250),
---     City VARCHAR(250),
---     State VARCHAR(250),
---     Zip VARCHAR(250),
---     Image TEXT,
---     LoanAmount DECIMAL,
---     MonthlyMortgage DECIMAL,
---     Rent DECIMAL
+--     id SERIAL PRIMARY KEY,
+--     userid INTEGER NOT NULL REFERENCES houseusers(ID),
+--     name VARCHAR(250),
+--     description TEXT,
+--     address VARCHAR(250),
+--     city VARCHAR(250),
+--     state VARCHAR(250),
+--     zip VARCHAR(250),
+--     image TEXT,
+--     loanAmount VARCHAR(250),
+--     monthlyMortgage VARCHAR(250),
+--     desiredRent VARCHAR(250)
+--     recommendedRent VARCHAR(250)
 -- );
 
 

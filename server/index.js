@@ -9,6 +9,9 @@ const express = require('express')
 
 const app = express();
 
+const checkForSessions = require('./middleware/checkForSessions');
+//const checkForAuth = require('./middleware/checkForAuth');
+
 app.use( bodyParser.json() );
 app.use( cors() );
 
@@ -18,7 +21,7 @@ app.use( cors() );
 
 app.post('/api/auth/login', ctrl.login);
 app.post('/api/auth/register', ctrl.reg);
-app.post('/api/auth/logout', ctrl.logout);
+app.get('/api/auth/logout', ctrl.logout);
 
 
 // PROPERTIES ENDPOINTS
@@ -41,6 +44,8 @@ app.use(
     saveUninitialized: true
   })
 );
+app.use(checkForSessions);
+
 
 
 
