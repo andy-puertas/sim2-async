@@ -52,7 +52,7 @@ class Dashboard extends Component {
 
   reset() {
     this.setState({
-      filter: 0,
+      filtered: 0,
       amount: 0
     })
   }
@@ -109,9 +109,16 @@ render() {
       </div>
       <div className='properties'>
         <p className='rent-text'>List properties with "desired rent" greater than: $</p>
-        <input className='rent-input' type="text" placeholder='0' onChange={this.filterAmount} value={this.state.amount}/>
-        <button className='fil-res' id='filter' onChange={this.filterButton} >Filter</button>
-        <button className='fil-res' id='reset' onClick={this.reset}>Reset</button>
+        <input className='rent-input' 
+               type="text" placeholder='0' 
+               onChange={this.filterAmount} 
+               value={this.state.amount}/>
+        <button className='fil-res' 
+               id='filter' 
+               onClick={this.filterButton} >Filter</button>
+        <button className='fil-res' 
+                id='reset' 
+                onClick={this.reset}>Reset</button>
       </div>
       <hr/>
         

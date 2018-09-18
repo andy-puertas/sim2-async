@@ -33,7 +33,11 @@ module.exports = {
               res.sendStatus(401)
               console.log(res.data)
           }
-      } );
+      })
+      .catch( err => {
+        res.status(500).send('Try again');
+        console.log(err);
+      })
   },
 
   

@@ -47,9 +47,16 @@ class Wizard1 extends Component {
 
         <div className='name-desc-box'>
           <p className='texts' id='prop-name'>Property Name</p>
-          <input className='input-boxes' id='input-name' type='text' onChange={this.addName}/>
+          <input className='input-boxes' 
+                 id='input-name' type='text' 
+                 onChange={this.addName}
+                 value={this.props.name}/>
           <p className='texts' id='prop-desc'>Property Description</p>
-          <textarea className='input-boxes' id='input-desc' type='text' onChange={this.addDesc}/>
+          <textarea className='input-boxes' 
+                    id='input-desc' 
+                    type='text' 
+                    onChange={this.addDesc}
+                    value={this.props.description}/>
         </div>  
 
         <div id='next-box1'>

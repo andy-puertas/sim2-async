@@ -1,7 +1,12 @@
 import React, { Component } from 'react';
-//import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
+import { address, city, state, zip} from '../../../ducks/reducer';
+import { connect } from 'react-redux';
+import activeStep from '../../Assets/step_active.png';
+import inactiveStep from '../../Assets/step_inactive.png';
+import completeStep from '../../Assets/step_completed.png';
 
-export default class Wizard2 extends Component {
+class Wizard2 extends Component {
   constructor(props){
     super(props);
     this.state = {
@@ -10,35 +15,106 @@ export default class Wizard2 extends Component {
       state: '',
       zip: ''
     }
+    this.addAddress = this.addAddress.bind( this );
+    this.addCity = this.addCity.bind( this );
+    this.addState = this.addState.bind( this );
+    this.addZip = this.addZip.bind( this );
   }
+
+  addAddress(e) {
+    this.props.address(e.target.value)
+  }
+
+  addCity(e) {
+    this.props.city(e.target.value)
+  }
+
+  addState(e) {
+    this.props.state(e.target.value)
+  }
+
+  addZip(e) {
+    this.props.zip(e.target.value)
+  }
+
   render() {
     return (
-      <div className="wiz2-page">
-        <div className="wiz2-container">
+      <section className="wiz-box">
+        <div className="add-cancel">
+          <h1>Add New Listing</h1>
+          <Link to='/dash'><button id='cancel'>Cancel</button></Link>
+        </div>  
+
+        <div className='steps'>
           <p>Step 2</p>
-            <br />
+        </div>  
 
-            <h4>Address</h4>
-            <input />
-            <br />
+        <div className='dots'>
+          <img src={completeStep} alt='complete'/>
+          <img src={activeStep} alt='active'/>
+          <img src={inactiveStep} alt='inactive'/>
+          <img src={inactiveStep} alt='inactive'/>
+          <img src={inactiveStep} alt='inactive'/>
+        </div>
 
-            <h4>City</h4>
-            <input />
-            <br />
-
-            <h4>State</h4>
-            <input />
-            <br />
-
-            <h4>Zip</h4>
-            <input />
-            <br />
-            
-            <button>Previous Step</button>
-            <button>Next Step</button>
+        <div className='address-box' >
+          <p className='texts' id='address' >Address</p>
+          <input className='input-boxes' 
+                 id='input-add' 
+                 type="text" 
+                 onChange={this.addAddress} 
+                 value={this.props.address}/>
         </div>
         
-      </div>
+        <div className='city-state-box' >
+          <p className='texts' id='city' >City</p>
+          <p className='texts' id='state' >State</p>
+        </div>
+        
+        <div className='city-state-box' >
+          <input className='input-boxes' 
+                 id='input-city' type="text" 
+                 onChange={this.addCity} 
+                 value={this.props.city}/>
+          <input className='input-boxes' 
+                 id='input-state' 
+                 type="text" 
+                 onChange={this.addState} 
+                 value={this.props.state}/>
+        </div>
+        
+        <div className='zip-box' >
+          <p className='texts' id='zip'>Zip</p>
+          <input className='input-boxes' 
+                 id='input-zip' 
+                 type="text" 
+                 onChange={this.addZip} 
+                 value={this.props.zip}/>
+        </div>
+
+        <div id='prev-next-box'>
+          <Link to='/wizard/1'>
+            <button className='next-step' id='prev-next-prev'>Previous Step</button>
+          </Link>
+
+          <Link to='/wizard/3'>
+            <button className='next-step' id='prev-next-next'>Next Step</button>
+          </Link>
+        </div>  
+      </section>
     )
   }
 }
+
+function mapStateToProps(reduxState) {
+  return {
+    address: reduxState.address,
+    city: reduxState.city,
+    state: reduxState.state,
+    zip: reduxState.zip
+  };
+}
+
+export default connect( mapStateToProps, { address, city, state, zip}) (Wizard2);
+
+        

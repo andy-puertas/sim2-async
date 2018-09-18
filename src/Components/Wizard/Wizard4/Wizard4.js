@@ -48,9 +48,17 @@ class Wizard4 extends Component {
 
         <div className='name-desc-box'>
           <p className='texts' id='prop-name'>Loan Amount</p>
-          <input className='input-boxes' id='input-name' type='text' onChange={this.addLoan}/>
+          <input className='input-boxes' 
+                 id='input-name' 
+                 type='text' 
+                 onChange={this.addLoan}
+                 value={this.props.loan_amount}/>
           <p className='texts' id='prop-desc'>Monthly Mortgage</p>
-          <input className='input-boxes' id='input-mort' type='text' onChange={this.addMortgage}/>
+          <input className='input-boxes' 
+                 id='input-mort' 
+                 type='text' 
+                 onChange={this.addMortgage}
+                 value={this.props.monthly_mortgage}/>
         </div>   
 
         <div id='prev-next-box'>

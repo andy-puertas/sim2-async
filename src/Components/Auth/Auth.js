@@ -67,8 +67,8 @@ class Auth extends Component {
           <br />
 
           <div className="auth-buttons-container">
-            <button className='auth-button' id='login-button'>Login</button>
-            <button className='auth-button' id='register-button'>Register</button>
+            <button className='auth-button' id='login-button' onClick={this.login}>Login</button>
+            <button className='auth-button' id='register-button' onClick={this.register}>Register</button>
           </div>
       </section>
     )
