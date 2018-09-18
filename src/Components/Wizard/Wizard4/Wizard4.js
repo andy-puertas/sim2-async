@@ -1,4 +1,5 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react';;
+//import { connect } from 'react-redux';
 
 export default class Wizard4 extends Component {
   constructor(props) {

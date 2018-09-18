@@ -9,7 +9,7 @@ const initialState = {
   desc: '',
   address: '',
   city: '',
-  state: '',
+  st: '',
   zip: '',
   img: '',
   loan: '',
@@ -22,13 +22,13 @@ const GET_USER = 'GET_USER';
 const USER_INFO = 'USER_INFO';
 const LOGOUT = 'LOGOUT';
 
-const NAME = 'NAME';
-const DESCRIPTION = 'DESCRIPTION';
-const ADDRESS = 'ADDRESS';
-const CITY = 'CITY';
-const STATE = 'STATE';
-const ZIP = 'ZIP';
-const IMAGE = 'IMAGE';
+const GET_NAME = 'NAME';
+const GET_DESCRIPTION = 'DESCRIPTION';
+const GET_ADDRESS = 'ADDRESS';
+const GET_CITY = 'CITY';
+const GET_STATE = 'STATE';
+const GET_ZIP = 'ZIP';
+const GET_IMAGE = 'IMAGE';
 const LOAN_AMOUNT = 'LOAN_AMOUT';
 const MONTHLY_MORTGAGE = 'MONTHLY_MORTGAGE';
 const DESIRED_RENT = 'DESIRED_RENT';
@@ -47,24 +47,24 @@ export default function reducer(state=initialState, action) {
         return {...state, username: payload.username, password: payload.password}
     case LOGOUT:
         return initialState;        
-    case NAME:
+    case GET_NAME:
         return Object.assign( {}, state, {name: payload} )
-    case DESCRIPTION:
+    case GET_DESCRIPTION:
         return Object.assign( {}, state, {desc: payload} )
-    case ADDRESS:
+    case GET_ADDRESS:
         return Object.assign( {}, state, {address: payload} )
-    case CITY:
+    case GET_CITY:
         return Object.assign( {}, state, {city: payload} )
-    case STATE:
-        return Object.assign( {}, state, {state: payload} )
-    case ZIP:
+    case GET_STATE:
+        return Object.assign( {}, state, {st: payload} )
+    case GET_ZIP:
         return Object.assign( {}, state, {zip: payload} )
-    case IMAGE:
+    case GET_IMAGE:
         return Object.assign( {}, state, {img: payload} )
     case LOAN_AMOUNT:
         return Object.assign( {}, state, {loan: payload} )
     case MONTHLY_MORTGAGE:
-        return Object.assign( {}, state, {mortage: payload} )
+        return Object.assign( {}, state, {mortgage: payload} )
     case DESIRED_RENT:
         return Object.assign( {}, state, {desired_rent: payload} )
     case RECOMMENDED_RENT:
@@ -74,7 +74,7 @@ export default function reducer(state=initialState, action) {
     case FILTER_PROPERTIES + '_FULFILLED':
         return Object.assign( {}, state, { properties: payload } );
     case UPDATE_PROPERTIES: 
-        return Object.assign( {}, state, {name:'', desc:'', address:'', city:'', state:'', zip:'', img:'', loan:'', mortgage:'', desired_rent:''} )    
+        return Object.assign( {}, state, {name:'', desc:'', address:'', city:'', st:'', zip:'', img:'', loan:'', mortgage:'', desired_rent:''} )    
     default:
         return state;
   }
@@ -99,3 +99,97 @@ export function logout() {
     type: LOGOUT
   }
 }
+
+export function name(name) {
+  return {
+    type: GET_NAME,
+    payload: name
+  };
+}
+
+export function city(city) {
+  return {
+    type: GET_CITY,
+    payload: city
+  };
+}
+
+export function description(desc) {
+  return {
+    type: GET_DESCRIPTION,
+    payload: desc
+  };
+}
+
+export function address(address) {
+  return {
+    type: GET_ADDRESS,
+    payload: address
+  };
+}
+
+export function state(st) {
+  return {
+    type: GET_STATE,
+    payload: st
+  };
+}
+
+export function zip(zip) {
+  return {
+    type: GET_ZIP,
+    payload: zip
+  };
+}
+
+export function image(img) {
+  return {
+    type: GET_IMAGE,
+    payload: img
+  };
+}
+
+export function mortgage(mortgage) {
+  return {
+    type: MONTHLY_MORTGAGE,
+    payload: mortgage
+  };
+}
+
+export function desiredRent(desired_rent) {
+  return {
+    type: DESIRED_RENT,
+    payload: desired_rent
+  };
+}
+
+export function recommendedRent(recommended_rent) {
+  return {
+    type: RECOMMENDED_RENT,
+    payload: recommended_rent
+  };
+}
+
+export function updateProperties(name, desc, address, st, city, zip, img, loan, mortgage, desired_rent ) {
+  return {
+    type: updateProperties,
+    payload: [name, desc, address, st, city, zip, img, loan, mortgage, desired_rent]
+  };
+}
+
+export function getProperties() {
+  let properties = axios.get('/api/properties').then(res => res.data);
+  return {
+    type: GET_PROPERTIES,
+    payload: properties
+  };
+}
+
+export function filterProperties(rent) {
+  let properties = axios.get(`/api/properties?rent=${rent}`).then(res => res.data);
+  return {
+    type: FILTER_PROPERTIES,
+    payload: properties
+  };
+}
+

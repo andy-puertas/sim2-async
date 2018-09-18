@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-//import { Link } from 'react-router-dom';
+//import { connect } from 'react-redux';
 
 export default class Wizard3 extends Component {
   constructor(props) {

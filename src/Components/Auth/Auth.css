@@ -1,32 +1,49 @@
 .auth-page {
+  position: relative;
+  left: 20%;
   height: 100vh;
-  width: 50%;
-  background-color: #fff;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-content: center;
+  width: 60%;
+  background: white; 
 }
 
+
 .auth-logo {
-  margin: 50px;
-  width: 50px;
-  height: 50px;
+  position: relative;
+  margin-top: 150px;
+  height: 25%;
+  width: 20%;
+}
+
+.auth-input-box {
+  position: relative;
+  top: 50px;
 }
 
 .auth-input {
   width: 70%;
-  height: 20px;
-  margin: 10px;
 }
 
-input, textarea, .largeImg {
-  border: #AFD4C0 solid 2px;
-  border-radius: 5px;
-  margin-bottom: 10px;
+.auth-user-pass {
+  font-weight: bolder;
+  margin-top: 40px;
+  position: relative;
+  right: 28%;
+  bottom: 7px;
 }
 
-input, h3, textarea {
-  font-family: 'Open Sans', sans-serif;
-  font-weight: 600;
+.auth-buttons-container {
+  position: relative;
+  top: 20%;
 }
+
+#login-button {
+  margin-right: 40px;
+  background: #8AEA92;
+  font-weight: bolder;
+}
+
+#register-button {
+  background: #3B5249;
+  color: white;
+}
+

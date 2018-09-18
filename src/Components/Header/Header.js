@@ -24,7 +24,7 @@ class Header extends Component {
         <div>
           <section className='navbar'>
             <div className='nav-content'>
-              <img src="./header_logo.png" alt="logo"/>
+              <img src="../Assets/auth_logo.png" alt="logo"/>
               <h1>Houser</h1>
               <h2>Dashboard</h2>
             </div>
