@@ -60,14 +60,14 @@ class Dashboard extends Component {
 render() {
   console.log(this.state);
     const propertyDisplay = this.state.properties.filter( (cards, i) => {
-      return cards.desired_rent > this.state.filtered ? true : false
+      return cards.desiredRent > this.state.filtered ? true : false
   }).map( (el, i) => {
       if(el.name === null && el.description === null) {
         return (
           null
         )
       } else {
-         let calculateRec = el.monthly_mortgage * 1.25
+         let calculateRec = el.mortgage * 1.25
          return (
           <section className='cards' key={el.id}>
               <div className='card-img-box'>
@@ -82,10 +82,10 @@ render() {
                       <hr id='vertical-line'/>
                   </div>
                   <div className='h5-box'>
-                      <h5>Loan: ${el.loan_amount}</h5>
-                      <h5>Monthly Mortgage: ${el.monthly_mortgage}</h5>
+                      <h5>Loan: ${el.loanAmount}</h5>
+                      <h5>Monthly Mortgage: ${el.mortgage}</h5>
                       <h5>Recommended Rent: ${calculateRec}</h5>
-                      <h5>Desired Rent: ${el.desired_rent}</h5>
+                      <h5>Desired Rent: ${el.desiredRent}</h5>
                       <h5>Address: {el.address}</h5>
                       <h5>City: {el.city}</h5>
                       <h5>State: {el.state}</h5>
@@ -96,12 +96,13 @@ render() {
                   <img src={deleteIcon} alt="delete" onClick={() => this.delete(el.id)}/>
               </div>
           </section>
-          )
+        )
       }
   })
   
   return (
     <section className='dash-box'>
+      
       <div className='add-box'>
         <Link to='/wizard/wizard1'>
           <button className='add-button'>Add new property</button>
@@ -128,6 +129,7 @@ render() {
       <div className='card-box'>
         { propertyDisplay }
       </div>
+   
     </section>
 
     )

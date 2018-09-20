@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import { loanAmount, mortgage } from './../../../ducks/reducer';
+import { makeLoanAmount, makeMortgage } from './../../../ducks/reducer';
 import { connect } from 'react-redux';
 import activeStep from '../../Assets/step_active.png';
 import inactiveStep from '../../Assets/step_inactive.png';
@@ -12,18 +12,18 @@ class Wizard4 extends Component {
     super(props);
     this.state = {
       loanAmount: '',
-      monthlyMortgage: ''
+      mortgage: ''
     }
     this.addLoan = this.addLoan.bind( this );
     this.addMortgage = this.addMortgage.bind( this );
   }
 
   addLoan(e) {
-    this.props.loanAmount(e.target.value)
+    this.props.makeLoanAmount(e.target.value)
   }
 
   addMortgage(e) {
-    this.props.mortgage(e.target.value)
+    this.props.makeMortgage(e.target.value)
   }
 
   render() {
@@ -31,7 +31,9 @@ class Wizard4 extends Component {
       <section className="wiz-box">
         <div className="add-cancel">
           <h1>Add New Listing</h1>
-          <Link to='/dash'><button id='cancel'>Cancel</button></Link>
+          <Link to='/dash'>
+            <button id='cancel'>Cancel</button>
+          </Link>
         </div>  
 
         <div className='steps'>
@@ -52,13 +54,13 @@ class Wizard4 extends Component {
                  id='input-name' 
                  type='text' 
                  onChange={this.addLoan}
-                 value={this.props.loan_amount}/>
+                 value={this.props.loanAmount}/>
           <p className='texts' id='prop-desc'>Monthly Mortgage</p>
           <input className='input-boxes' 
                  id='input-mort' 
                  type='text' 
                  onChange={this.addMortgage}
-                 value={this.props.monthly_mortgage}/>
+                 value={this.props.mortgage}/>
         </div>   
 
         <div id='prev-next-box'>
@@ -79,11 +81,11 @@ class Wizard4 extends Component {
 
 function mapStateToProps(reduxState) {
   return {
-    loan_amount: reduxState.loan_amount,
-    monthly_mortgage: reduxState.monthly_mortgage
+    loanAmount: reduxState.loanAmount,
+    mortgage: reduxState.mortgage
   };
 }
 
-export default connect(mapStateToProps, {loanAmount, mortgage}) (Wizard4);
+export default connect(mapStateToProps, {makeLoanAmount, makeMortgage}) (Wizard4);
 
 

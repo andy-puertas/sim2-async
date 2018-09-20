@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import { address, city, state, zip} from '../../../ducks/reducer';
+import { makeAddress, makeCity, makeState, makeZip} from '../../../ducks/reducer';
 import { connect } from 'react-redux';
 import activeStep from '../../Assets/step_active.png';
 import inactiveStep from '../../Assets/step_inactive.png';
@@ -22,19 +22,19 @@ class Wizard2 extends Component {
   }
 
   addAddress(e) {
-    this.props.address(e.target.value)
+    this.props.makeAddress(e.target.value)
   }
 
   addCity(e) {
-    this.props.city(e.target.value)
+    this.props.makeCity(e.target.value)
   }
 
   addState(e) {
-    this.props.state(e.target.value)
+    this.props.makeState(e.target.value)
   }
 
   addZip(e) {
-    this.props.zip(e.target.value)
+    this.props.makeZip(e.target.value)
   }
 
   render() {
@@ -115,6 +115,6 @@ function mapStateToProps(reduxState) {
   };
 }
 
-export default connect( mapStateToProps, { address, city, state, zip}) (Wizard2);
+export default connect( mapStateToProps, { makeAddress, makeCity, makeState, makeZip}) (Wizard2);
 
         

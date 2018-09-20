@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {Link} from 'react-router-dom';
 import { connect } from 'react-redux';
-import { name, description } from './../../../ducks/reducer'
+import { makeName, makeDescription } from './../../../ducks/reducer'
 import activeStep from '../../Assets/step_active.png';
 import inactiveStep from '../../Assets/step_inactive.png';
 import './Wizard1.css';
@@ -18,19 +18,22 @@ class Wizard1 extends Component {
   }
 
   addName(e) {
-   this.props.name(e.target.value)
+   this.props.makeName(e.target.value)
   }
 
   addDesc(e) {
-    this.props.description(e.target.value)
+    this.props.makeDescription(e.target.value)
   }
   
   render() {
     return (
       <section className="wiz-box">
+        
         <div className="add-cancel">
           <h1>Add New Listing</h1>
-          <Link to='/dash'><button id='cancel'>Cancel</button></Link>
+          <Link to='/dash'>
+            <button id='cancel'>Cancel</button>
+          </Link>
         </div>  
 
         <div className='steps'>
@@ -64,6 +67,7 @@ class Wizard1 extends Component {
             <button className='next-step'>Next Step</button>
           </Link>
         </div>  
+      
       </section>
     )
   }
@@ -76,7 +80,7 @@ function mapStateToProps(reduxState) {
   };
 }
 
-export default connect(mapStateToProps, { name, description }) (Wizard1);
+export default connect(mapStateToProps, { makeName, makeDescription }) (Wizard1);
 
       
 
