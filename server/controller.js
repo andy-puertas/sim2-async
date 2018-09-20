@@ -41,8 +41,6 @@ module.exports = {
   },
 
   
-
-
   logout: (req, res) => {
     req.session.destroy();
     res.sendStatus(200);
@@ -51,6 +49,17 @@ module.exports = {
   create: (req, res) => {
     const db = req.app.get('db');
     const {userid} = req.session.user.id;
+    const {name, 
+      description, 
+      address, 
+      city, 
+      state, 
+      zip, 
+      image, 
+      loanAmount, 
+      monthlyMortgage, 
+      desiredRent, 
+      recommendedRent} = req.body;
 
     db.create_property([userid, name, description, address, city, state, zip, image, loanAmount, monthlyMortgage, desiredRent, recommendedRent])
       .then( properties => {
@@ -90,3 +99,4 @@ module.exports = {
       })
   }
 }
+

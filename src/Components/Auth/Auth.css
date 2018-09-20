@@ -1,7 +1,7 @@
 .auth-page {
   position: relative;
   left: 20%;
-  height: 120vh;
+  height: 100vh;
   width: 60%;
   background: white; 
 }
@@ -9,14 +9,14 @@
 
 .auth-logo {
   position: relative;
-  margin-top: 150px;
+  margin-top: 180px;
   height: 25%;
   width: 20%;
 }
 
 .auth-input-box {
   position: relative;
-  top: 50px;
+  top: 20px;
 }
 
 .auth-input {
@@ -33,7 +33,7 @@
 
 .auth-buttons-container {
   position: relative;
-  top: 20%;
+  top: 5%;
   height: 30%;
 }
 

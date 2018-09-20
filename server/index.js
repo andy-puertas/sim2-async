@@ -7,6 +7,13 @@ const express = require('express')
     , session = require('express-session')
     , ctrl = require('./controller');
 
+const {
+  SERVER_PORT,
+  CONNECTION_STRING,
+  SESSION_SECRET
+} = process.env;
+    
+    
 const app = express();
 
 const checkForSession = require('./middleware/checkForSession');
@@ -16,27 +23,6 @@ app.use( bodyParser.json() );
 app.use( cors() );
 
 
-// AUTHORIZATION ENDPOINTS
-
-
-app.post('/api/auth/login', ctrl.login);
-app.post('/api/auth/register', ctrl.reg);
-app.post('/api/auth/logout', ctrl.logout);
-
-
-// PROPERTIES ENDPOINTS
-
-app.get('/api/properties', checkForAuth, ctrl.read);
-app.post('/api/properties', checkForAuth, ctrl.create);
-app.delete('/api/properties/:id', checkForAuth, ctrl.delete);
-
-
-const {
-  SERVER_PORT,
-  CONNECTION_STRING,
-  SESSION_SECRET
-} = process.env;
-
 app.use(
   session({
     secret: SESSION_SECRET,
@@ -45,8 +31,6 @@ app.use(
   })
 );
 app.use( (req, res, next) => checkForSession(req, res, next));
-
-
 
 
 app.listen(SERVER_PORT, () => {
@@ -62,4 +46,27 @@ massive(CONNECTION_STRING)
   .catch(err => {
     console.log(err);
     app.set('db', dbInstance);
-  })
+})
+
+
+
+// AUTHORIZATION ENDPOINTS
+
+app.post('/api/auth/login', ctrl.login);
+app.post('/api/auth/register', ctrl.reg);
+app.post('/api/auth/logout', ctrl.logout);
+
+
+// PROPERTIES ENDPOINTS
+
+app.get('/api/properties', checkForAuth, ctrl.read);
+app.post('/api/properties', checkForAuth, ctrl.create);
+app.delete('/api/properties/:id', checkForAuth, ctrl.delete);
+
+
+
+
+
+
+
+

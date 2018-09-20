@@ -59,7 +59,7 @@ class Dashboard extends Component {
 
 render() {
   console.log(this.state);
-    const propertyDisplay = this.state.properties.filter( (listings, i) => {
+    let propertyDisplay = this.state.properties.filter( (listings, i) => {
       return listings.desiredRent > this.state.filtered ? true : false
   }).map( (el, i) => {
       if(el.name === null && el.description === null) {
@@ -67,7 +67,7 @@ render() {
           null
         )
       } else {
-         let calculateRec = el.mortgage * 1.25
+         let calculateRec = el.mortgage * 1.25;
          return (
           <section className='listings' key={el.id}>
               <div className='list-img-box'>
@@ -104,7 +104,7 @@ render() {
     <section className='dash-box'>
       
       <div className='add-box'>
-        <Link to='/wizard/wizard1'>
+        <Link to='/wizard/1'>
           <button className='add-button'>Add new property</button>
         </Link>
       </div>

@@ -13,7 +13,8 @@ class Wizard5 extends Component {
       desiredRent: '',
       recommended: this.props.mortgage * 1.25
     }
-    this.addRent = this.addRent.bind( this )
+    this.addRent = this.addRent.bind( this );
+    this.createListing = this.createListing.bind( this );
   }
 
   addRent(e) {

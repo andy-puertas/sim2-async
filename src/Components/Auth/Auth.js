@@ -38,7 +38,7 @@ class Auth extends Component {
         user: res.data
       })
       this.props.userInfo(res.data);
-      this.props.history.push('/dash');
+      this.props.history.push('/dashboard');
     })
   }
 
@@ -46,7 +46,7 @@ class Auth extends Component {
     axios.post('/api/auth/register', this.state)
     .then( res => {
       this.props.userInfo(res.data);
-      this.props.history.push('/dash');
+      this.props.history.push('/dashboard');
     })
   }
 
