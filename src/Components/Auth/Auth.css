@@ -1,7 +1,7 @@
 .auth-page {
   position: relative;
   left: 20%;
-  height: 100vh;
+  height: 120vh;
   width: 60%;
   background: white; 
 }
@@ -34,16 +34,21 @@
 .auth-buttons-container {
   position: relative;
   top: 20%;
+  height: 30%;
 }
 
 #login-button {
   margin-right: 40px;
   background: #8AEA92;
   font-weight: bolder;
+  height: 10%;
+  width: 14%;
 }
 
 #register-button {
   background: #3B5249;
   color: white;
+  height: 10%;
+  width: 14%;
 }
 

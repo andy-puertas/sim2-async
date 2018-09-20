@@ -59,8 +59,8 @@ class Dashboard extends Component {
 
 render() {
   console.log(this.state);
-    const propertyDisplay = this.state.properties.filter( (cards, i) => {
-      return cards.desiredRent > this.state.filtered ? true : false
+    const propertyDisplay = this.state.properties.filter( (listings, i) => {
+      return listings.desiredRent > this.state.filtered ? true : false
   }).map( (el, i) => {
       if(el.name === null && el.description === null) {
         return (
@@ -69,11 +69,11 @@ render() {
       } else {
          let calculateRec = el.mortgage * 1.25
          return (
-          <section className='cards' key={el.id}>
-              <div className='card-img-box'>
-                  <img id='card-img' src={el.image} alt="house"/>
+          <section className='listings' key={el.id}>
+              <div className='list-img-box'>
+                  <img id='list-img' src={el.image} alt="house"/>
               </div>
-              <div className='name-desc-card-box'>
+              <div className='name-desc-list-box'>
                   <h5 id='name-h5'>Name {el.name}</h5>
                   <p>{el.description}</p>
               </div>
@@ -92,7 +92,7 @@ render() {
                       <h5>Zip: {el.zip}</h5>
                   </div>
               </section>
-              <div className='lil-x' >
+              <div className='x-icon' >
                   <img src={deleteIcon} alt="delete" onClick={() => this.delete(el.id)}/>
               </div>
           </section>
@@ -126,7 +126,7 @@ render() {
       <div className='h3-div'>
         <h3>Home Listings</h3>
       </div>
-      <div className='card-box'>
+      <div className='list-box'>
         { propertyDisplay }
       </div>
    

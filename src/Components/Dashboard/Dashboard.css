@@ -83,12 +83,12 @@ h3 {
   font-size: 20px;
 }
 
-.card-box {
+.list-box {
   display: flex;
   flex-direction: column;
 }
 
-.cards {
+.listings {
   display: flex;
   margin-bottom: 20px;
   position: relative;
@@ -96,11 +96,16 @@ h3 {
   left: 40px;
 }
 
-.card-img-box {
+.list-img-box {
   height: 150px;
   width: 150px;
   background: gray;
   overflow: scroll;
+}
+
+#list-img {
+  height: 15%;
+  width: 15%;
 }
 
 h5 {
@@ -113,19 +118,19 @@ h5 {
   right: 27%;
 }
 
-.name-desc-card-box {
+.name-desc-list-box {
   height: 150px;
   width: 400px;
   background: lightgray;
 }
 
-.name-desc-card-box h5 {
+.name-desc-list-box h5 {
   position: relative;
   right: 38%;
   top: 10px;
 }
 
-.name-desc-card-box p {
+.name-desc-list-box p {
   position: relative;
   right: 35%;
   top: 15px;
@@ -154,12 +159,12 @@ h5 {
 
 }
 
-.lil-x {
+.x-icon {
   height: 150px;
   background: lightgray;
 }
 
-.lil-x img {
+.x-icon img {
   position: relative;
   top: 10px;
   right: 10px;
