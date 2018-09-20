@@ -27,10 +27,12 @@ class Wizard4 extends Component {
   }
 
   render() {
+    console.log(this.state);
     return (
       <section className="wiz-box">
+        
         <div className="add-cancel">
-          <h1>Add New Listing</h1>
+          <h1 id='add-listing'>Add New Listing</h1>
           <Link to='/dash'>
             <button id='cancel'>Cancel</button>
           </Link>
