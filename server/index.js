@@ -21,7 +21,7 @@ app.use( cors() );
 
 app.post('/api/auth/login', ctrl.login);
 app.post('/api/auth/register', ctrl.reg);
-app.get('/api/auth/logout', ctrl.logout);
+app.post('/api/auth/logout', ctrl.logout);
 
 
 // PROPERTIES ENDPOINTS

@@ -45,7 +45,7 @@ class Wizard3 extends Component {
 
         <div className="prevew-img">
           <img src={this.props.image} 
-               alt='preview-image' 
+               alt='wiz3pico' 
                value={this.props.image}/>
         </div>
 

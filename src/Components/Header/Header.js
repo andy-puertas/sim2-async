@@ -13,7 +13,8 @@ class Header extends Component {
   }
 
   logout() {
-    axios.get('/api/auth/logout').then( res => {
+    axios.post('/api/auth/logout')
+    .then( res => {
       console.log(res.data);
       this.props.history.push('/');
     })
