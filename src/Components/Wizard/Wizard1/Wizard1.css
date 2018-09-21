@@ -174,7 +174,7 @@
 .preview-img {
   position: relative;
   left: 21%;
-  top: 17%;
+  margin-top: 50%;
   background: lightgray;
   border: solid #3B5249 1px;
   border-radius: 3px;
@@ -195,7 +195,12 @@
 
 #img-url {
   position: relative;
+  top: 50px;
   right: 22%;
+}
+
+#input-img {
+  margin-top: 100px;
 }
 
 #prev-next-box3 {

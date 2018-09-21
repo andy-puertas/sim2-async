@@ -11,8 +11,8 @@ class Wizard4 extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      loanAmount: '',
-      mortgage: ''
+      loanamount: '',
+      monthlymortgage: ''
     }
     this.addLoan = this.addLoan.bind( this );
     this.addMortgage = this.addMortgage.bind( this );
@@ -56,13 +56,13 @@ class Wizard4 extends Component {
                  id='input-name' 
                  type='text' 
                  onChange={this.addLoan}
-                 value={this.props.loanAmount}/>
+                 value={this.props.loanamount}/>
           <p className='texts' id='prop-desc'>Monthly Mortgage</p>
           <input className='input-boxes' 
                  id='input-mort' 
                  type='text' 
                  onChange={this.addMortgage}
-                 value={this.props.mortgage}/>
+                 value={this.props.monthlymortgage}/>
         </div>   
 
         <div id='prev-next-box'>
@@ -83,8 +83,8 @@ class Wizard4 extends Component {
 
 function mapStateToProps(reduxState) {
   return {
-    loanAmount: reduxState.loanAmount,
-    mortgage: reduxState.mortgage
+    loanamount: reduxState.loanamount,
+    monthlymortgage: reduxState.monthlymortgage
   };
 }
 

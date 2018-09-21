@@ -48,7 +48,8 @@ module.exports = {
 
   create: (req, res) => {
     const db = req.app.get('db');
-    const {userid} = req.session.user.id;
+    const {id} = req.session.user;
+    console.log(req.session);
     const {name, 
       description, 
       address, 
@@ -56,12 +57,12 @@ module.exports = {
       state, 
       zip, 
       image, 
-      loanAmount, 
-      monthlyMortgage, 
-      desiredRent, 
-      recommendedRent} = req.body;
+      loanamount, 
+      monthlymortgage, 
+      desiredrent, 
+      recommendedrent} = req.body;
 
-    db.create_property([userid, name, description, address, city, state, zip, image, loanAmount, monthlyMortgage, desiredRent, recommendedRent])
+    db.create_property([id, name, description, address, city, state, zip, image, loanamount, monthlymortgage, desiredrent, recommendedrent])
       .then( properties => {
         res.status(200).send(properties)
       })

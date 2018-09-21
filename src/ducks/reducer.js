@@ -12,10 +12,10 @@ const initialState = {
   state: '',
   zip: '',
   image: '',
-  loanAmount: '',
-  mortgage: '',
-  desiredRent: '',
-  recommendedRent: ''
+  loanamount: '',
+  monthlymortgage: '',
+  desiredrent: '',
+  recommendedrent: ''
 }
 
 const GET_USER = 'GET_USER';
@@ -62,13 +62,13 @@ export default function reducer(state=initialState, action) {
     case GET_IMAGE:
         return Object.assign( {}, state, {image: payload} )
     case LOAN_AMOUNT:
-        return Object.assign( {}, state, {loanAmount: payload} )
+        return Object.assign( {}, state, {loanamount: payload} )
     case MONTHLY_MORTGAGE:
-        return Object.assign( {}, state, {mortgage: payload} )
+        return Object.assign( {}, state, {monthlymortgage: payload} )
     case DESIRED_RENT:
-        return Object.assign( {}, state, {desiredRent: payload} )
+        return Object.assign( {}, state, {desiredrent: payload} )
     case RECOMMENDED_RENT:
-        return Object.assign( {}, state, {recommendedRent: payload} )
+        return Object.assign( {}, state, {recommendedrent: payload} )
     case GET_PROPERTIES + '_FULFILLED':
         return Object.assign( {}, state, { properties: payload } );
     case FILTER_PROPERTIES + '_FULFILLED':
@@ -81,9 +81,9 @@ export default function reducer(state=initialState, action) {
         state:'', 
         zip:'', 
         image:'', 
-        loanAmount:'', 
-        mortgage:'', 
-        desiredRent:''} )    
+        loanamount:'', 
+        monthlymortgage:'', 
+        desiredrent:''} )    
     default:
         return state;
   }
@@ -158,38 +158,38 @@ export function makeImage(image) {
   };
 }
 
-export function makeLoanAmount(loanAmount) {
+export function makeLoanAmount(loanamount) {
   return {
     type: LOAN_AMOUNT,
-    payload: loanAmount
+    payload: loanamount
   };
 }
 
-export function makeMortgage(mortgage) {
+export function makeMortgage(monthlymortgage) {
   return {
     type: MONTHLY_MORTGAGE,
-    payload: mortgage
+    payload: monthlymortgage
   };
 }
 
-export function makeDesiredRent(desiredRent) {
+export function makeDesiredRent(desiredrent) {
   return {
     type: DESIRED_RENT,
-    payload: desiredRent
+    payload: desiredrent
   };
 }
 
-export function makeRecommendedRent(recommendedRent) {
+export function makeRecommendedRent(recommendedrent) {
   return {
     type: RECOMMENDED_RENT,
-    payload: recommendedRent
+    payload: recommendedrent
   };
 }
 
-export function updateProperties(name, description, address, state, city, zip, image, loanAmount, mortgage, desiredRent ) {
+export function updateProperties(name, description, address, state, city, zip, image, loanamount, monthlymortgage, desiredrent ) {
   return {
     type: updateProperties,
-    payload: [name, description, address, state, city, zip, image, loanAmount, mortgage, desiredRent]
+    payload: [name, description, address, state, city, zip, image, loanamount, monthlymortgage, desiredrent]
   };
 }
 

@@ -10,8 +10,8 @@ class Wizard5 extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      desiredRent: '',
-      recommended: this.props.mortgage * 1.25
+      desiredrent: '',
+      recommendedrent: this.props.monthlymortgage * 1.25
     }
     this.addRent = this.addRent.bind( this );
     this.createListing = this.createListing.bind( this );
@@ -22,10 +22,10 @@ class Wizard5 extends Component {
   }
 
   createListing() {
-    let { recommended } = this.state;
-    let { name, description, address, city, state, zip, image, loanAmount, mortgage, desiredRent } = this.props;
+    let { recommendedrent } = this.state;
+    let { name, description, address, city, state, zip, image, loanamount, monthlymortgage, desiredrent } = this.props;
 
-    axios.post('/api/properties', {name, description, address, city, state, zip, image, loanAmount, mortgage, desiredRent, recommended})
+    axios.post('/api/properties', {name, description, address, city, state, zip, image, loanamount, monthlymortgage, desiredrent, recommendedrent})
     .then( res => {
       this.props.updateProperties();
       this.props.history.push('/dashboard');
@@ -56,13 +56,13 @@ class Wizard5 extends Component {
 
         <div className="name-desc-box">
           <p className="texts" id="reco-rent" 
-             value={this.props.mortgage * 1.25}>Recommended Rent ${this.props.mortgage * 1.25}</p>
+             value={this.props.monthlymortgage * 1.25}>Recommended Rent ${this.props.monthlymortgage * 1.25}</p>
           <p className="texts" id="des-rent">Desired Rent</p>
           <input className="input-boxes" 
                  id="input-mort" 
                  type="text" 
                  onChange={(e) => this.props.makeDesiredRent(e.target.value)} 
-                 value={this.props.desiredRent}/>
+                 value={this.props.desiredrent}/>
         </div>
 
         <div id='prev-next-box'>
@@ -88,9 +88,10 @@ function mapStateToProps(reduxState) {
     state: reduxState.state,
     zip: reduxState.zip,
     image: reduxState.image,
-    loanAmount: reduxState.loanAmount,
-    mortgage: reduxState.mortgage,
-    desiredRent: reduxState.desiredRent
+    loanamount: reduxState.loanamount,
+    monthlymortgage: reduxState.monthlymortgage,
+    desiredrent: reduxState.desiredrent,
+    recommendedrent: reduxState.recommendedrent
   }
 }
 

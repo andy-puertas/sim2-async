@@ -1,7 +1,7 @@
 .dash-box {
   position: relative;
   left: 20% ;
-  height: 100vh;
+  height: 120vh;
   width: 60%;
   background: rgb(216, 233, 224); 
 }
@@ -69,17 +69,18 @@ hr {
   background: black;
   width: 95%;
   position: relative;
-  top: 18%;
+  top: 15%;
 }
+
 
 .h3-div {
   position: relative;
-  right: 39%;
-  top: 20%;
+  right: 36%;
+  top: 17%;
 }
 
 h3 {
-  font-weight: 600;
+  font-weight: bolder;
   font-size: 20px;
 }
 
@@ -92,34 +93,42 @@ h3 {
   display: flex;
   margin-bottom: 20px;
   position: relative;
-  top: 220px;
+  top: 170px;
   left: 40px;
+  width: 88%;
 }
 
 .list-img-box {
-  height: 150px;
-  width: 150px;
+  height: 180px;
+  width: 180px;
   background: gray;
   overflow: scroll;
 }
 
 #list-img {
-  height: 45%;
-  width: 50%;
+  margin-top: 25px;
+  height: 75%;
+  width: 80%;
 }
 
 h5 {
   font-size: 20px;
-  font-weight: 700;
+  font-weight: 900;
+}
+
+#desco-p {
+  left: 5%;
+  text-align: left;
+  top: 25px;
 }
 
 #name-h5 {
   position: relative;
-  right: 27%;
+  right: 25%;
 }
 
 .name-desc-list-box {
-  height: 150px;
+  height: 180px;
   width: 400px;
   background: lightgray;
 }
@@ -137,17 +146,17 @@ h5 {
 }
 
 .h5-hr-box {
-  height: 150px;
+  height: 180px;
   width: 420px;
   background: lightgray;
   display: flex;
 }
 
 .h5-box {
-  height: 125px;
+  height: 180px;
   width: 275;
   position: relative;
-  left: 30px;
+  left: 40px;
   top: 10px;
   text-align: left;
   overflow-y: scroll;
@@ -160,7 +169,7 @@ h5 {
 }
 
 .x-icon {
-  height: 150px;
+  height: 180px;
   background: lightgray;
 }
 
@@ -172,11 +181,12 @@ h5 {
 
 #vertical-line {
   border: none;
-  height: 130px;
+  height: 160px;
   background: black;
   width: 1px;
   position: relative;
-  right: 25%;
+  right: 2px;
+  left: 30px;
   bottom: 60px;
   top: 3px;
 }

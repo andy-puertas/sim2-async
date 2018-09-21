@@ -59,34 +59,34 @@ class Dashboard extends Component {
   }
 
 render() {
-  console.log(this.state);
+  console.log(this.props);
     let propertyDisplay = this.state.properties.filter( (listings, i) => {
-      return listings.desiredRent > this.state.filtered ? true : false
+      return listings.desiredrent > this.state.filtered ? true : false
   }).map( (el, i) => {
       if(el.name === null && el.description === null) {
         return (
           null
         )
       } else {
-         let calculateRec = el.mortgage * 1.25;
+         let calculateRec = el.monthlymortgage * 1.25;
          return (
           <section className='listings' key={el.id}>
               <div className='list-img-box'>
                   <img id='list-img' src={el.image} alt="house"/>
               </div>
               <div className='name-desc-list-box'>
-                  <h5 id='name-h5'>Name {el.name}</h5>
-                  <p>{el.description}</p>
+                  <h5 id='name-h5'>{el.name}</h5>
+                  <p id='desco-p'>{el.description}</p>
               </div>
               <section className='h5-hr-box'>
                   <div className='hr-box'>
                       <hr id='vertical-line'/>
                   </div>
                   <div className='h5-box'>
-                      <h5>Loan: ${el.loanAmount}</h5>
-                      <h5>Monthly Mortgage: ${el.mortgage}</h5>
+                      <h5>Loan: ${el.loanamount}</h5>
+                      <h5>Monthly Mortgage: ${el.monthlymortgage}</h5>
                       <h5>Recommended Rent: ${calculateRec}</h5>
-                      <h5>Desired Rent: ${el.desiredRent}</h5>
+                      <h5>Desired Rent: ${el.desiredrent}</h5>
                       <h5>Address: {el.address}</h5>
                       <h5>City: {el.city}</h5>
                       <h5>State: {el.state}</h5>
@@ -102,6 +102,7 @@ render() {
   })
   
   return (
+  
     <section className='dash-box'>
       
       <div className='add-box'>
@@ -122,7 +123,7 @@ render() {
                 id='reset' 
                 onClick={this.reset}>Reset</button>
       </div>
-      <hr/>
+      <hr />
         
       <div className='h3-div'>
         <h3>Home Listings</h3>
