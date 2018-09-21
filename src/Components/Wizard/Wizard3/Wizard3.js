@@ -26,7 +26,7 @@ class Wizard3 extends Component {
       
       <div className="add-cancel">
           <h1 id='add-listing'>Add New Listing</h1>
-          <Link to='/dash'>
+          <Link to='/dashboard'>
             <button id='cancel'>Cancel</button>
           </Link>
         </div>  
@@ -44,9 +44,7 @@ class Wizard3 extends Component {
         </div>
 
         <div className="prevew-img">
-          <img src={this.props.image} 
-               alt='wiz3pico' 
-               value={this.props.image}/>
+          <img id='wiz3-img' src={this.props.image} alt='wiz3pico' value={this.props.image}/>
         </div>
 
         <div>

@@ -33,7 +33,7 @@ class Wizard4 extends Component {
         
         <div className="add-cancel">
           <h1 id='add-listing'>Add New Listing</h1>
-          <Link to='/dash'>
+          <Link to='/dashboard'>
             <button id='cancel'>Cancel</button>
           </Link>
         </div>  

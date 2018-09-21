@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { getUser } from './../../ducks/reducer';
-import { deleteIcon } from '../Assets/delete_icon.png';
+import { deleteIcon } from '../Assets/delete_icon.png'
 import axios from 'axios';
 import './Dashboard.css';
 
@@ -17,6 +17,7 @@ class Dashboard extends Component {
     this.delete = this.delete.bind( this );
     this.reset = this.reset.bind( this );
     this.filterAmount = this.filterAmount.bind( this );
+    this.filterButton = this.filterButton.bind( this );
   }
 
   componentDidMount(){

@@ -49,7 +49,6 @@ massive(CONNECTION_STRING)
 })
 
 
-
 // AUTHORIZATION ENDPOINTS
 
 app.post('/api/auth/login', ctrl.login);
@@ -62,6 +61,7 @@ app.post('/api/auth/logout', ctrl.logout);
 app.get('/api/properties', checkForAuth, ctrl.read);
 app.post('/api/properties', checkForAuth, ctrl.create);
 app.delete('/api/properties/:id', checkForAuth, ctrl.delete);
+
 
 
 

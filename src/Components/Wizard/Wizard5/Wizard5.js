@@ -28,18 +28,18 @@ class Wizard5 extends Component {
     axios.post('/api/properties', {name, description, address, city, state, zip, image, loanAmount, mortgage, desiredRent, recommended})
     .then( res => {
       this.props.updateProperties();
-      this.props.history.push('/dash');
+      this.props.history.push('/dashboard');
     })
   }
 
   render() {
-    console.log(this.state);
+    console.log(this.props);
     return (
       <section className="wiz-box">
 
         <div className="add-cancel">
           <h1 id='add-listing'>Add New Listing</h1>
-          <Link to='/dash'><button id='cancel'>Cancel</button></Link>
+          <Link to='/dashboard'><button id='cancel'>Cancel</button></Link>
         </div>
 
         <div className='steps'>
