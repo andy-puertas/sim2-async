@@ -49,7 +49,7 @@ module.exports = {
   create: (req, res) => {
     const db = req.app.get('db');
     const {id} = req.session.user;
-    console.log(req.session);
+    //console.log(req.session);
     const {name, 
       description, 
       address, 
